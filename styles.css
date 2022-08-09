@@ -22,6 +22,7 @@ html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding-top: 0;
 }
 /* Nav Bar  */
 #nav-bar {
@@ -149,6 +150,8 @@ background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, F
 }
 .nav-bar .nav-list.open ul {
 	transform: translateY(90px);
+	width: 75vw;
+	margin-bottom: 12vw;
 }
 /* End Nav Bar */
 
@@ -184,7 +187,7 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
 }
 .hero .hero-info .hero-info-button {
 	margin-top: 30px;
-	padding: 2rem 5rem;
+	padding: 1vw 2vw;
 	display: inline-block;
 	font-size: 1.6rem;
 	text-transform: uppercase;
@@ -222,7 +225,7 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
     
 	width: 100%;
 	min-height: 50vh;
-	padding: 10rem 5rem;
+	padding: 1vw 3vw;
 	flex-direction: column;
 }
 .about .about-info {
@@ -266,6 +269,14 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
 	height: 100%;
 	width: 100%;
 }
+.about .about-img .about-img-wrapper img:hover{
+  transform: rotateX(180deg);	
+  width: 110%;
+  height: 110%;
+  transition-duration: 50ms;
+}
+
+
 .about .about-img .about-img-wrapper::after {
 	position: absolute;
 	content: '';
@@ -287,7 +298,7 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
     color: azure;
 	flex-direction: column;
 	min-height: 60vh;
-	padding: 10rem 5rem;
+	padding: 3vw 2vw;
 }
 .services .services-header {
 	width: 100%;
@@ -548,6 +559,10 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
   .menu-items {
 	order: 2;
 	display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
   }
   
   .menu-items li {
@@ -562,6 +577,9 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
 	color: cornsilk;
 	font-weight: 500;
 	transition: color 0.3s ease-in-out;
+  }
+  .menu-items a:hover{
+	color: #f0094a;
   }
   
   
@@ -615,7 +633,7 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
 	}
   
 	.navbar .menu-items {
-	  padding-top: 100px;
+	  padding-top: 55px;
 	  background: crimson;
 	  height: min-content;
 	  max-width: min-content;
@@ -640,3 +658,112 @@ background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, F
 	}
   
   }
+  /* btn 5 */
+  .btn-5 {
+	width: 130px;
+	height: 40px;
+	line-height: 42px;
+	padding: 0;
+	border: none;
+	background: rgb(255,27,0);
+  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+  }
+  .btn-5:hover {
+	color: #f0094a;
+	background: transparent;
+	 box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+	content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	height:2px;
+	width:0;
+	background: #f0094a;
+	box-shadow:
+	 -1px -1px 5px 0px #fff,
+	 7px 7px 20px 0px #0003,
+	 4px 4px 5px 0px #0002;
+	transition:400ms ease all;
+  }
+  .btn-5:after{
+	right:inherit;
+	top:inherit;
+	left:0;
+	bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+	width:100%;
+	transition:800ms ease all;
+  }
+  .custom-btn {
+	font-size: 128%;
+	width: 130px;
+	height: 40px;
+	color: #fff;
+	border-radius: 5px;
+	padding: -7px 25px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	 box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+	 7px 7px 20px 0px rgba(0,0,0,.1),
+	 4px 4px 5px 0px rgba(0,0,0,.1);
+	outline: none;
+  }
+  .frame {
+	width: 90%;
+	margin: 40px auto;
+	text-align: center;
+  }
+  /* flip box */
+  .flip-box {
+	background-color: transparent;
+	width: 33vw;
+	height: 24vh;
+	
+	perspective: 1000px;
+	margin-left: 35%;
+  }
+  
+  .flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+	transform: rotateX(180deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background: round;
+  }
+  
+  .flip-box-front {
+	background-image:url("p2.jpg");
+	color: black;
+	
+  }
+  
+  .flip-box-back {
+	background-image:url("p3.jpg") ;
+	color: white;
+	transform: rotateX(180deg);
+  }
+  /* end flip box */
